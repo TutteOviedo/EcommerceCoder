@@ -1,3 +1,4 @@
+
 carrito = [];
 
 const PRODUCTOS = {
@@ -93,7 +94,10 @@ CATALOGO.forEach(producto => {
 
 let shoppingCart = document.getElementById('shopping-cart');
 shoppingCart.addEventListener('click', () => {
-    let facturaCompra = "Factura de compra\n";
+    let nombre = prompt("Por favor, ingresa tu nombre:");
+    let apellido = prompt("Por favor, ingresa tu apellido:");
+    let documento = prompt("Por favor, ingresa tu número de documento:");
+    let facturaCompra = `Datos de facturación:\nNombre: ${nombre}\nApellido: ${apellido}\nDNI: ${documento}\n\nFactura de compra:\n`;
     let totalCarrito = 0;
 
     carrito.forEach(producto => {
