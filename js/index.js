@@ -18,17 +18,17 @@ function Producto(nombre,categoria,precio, id, imagen){
 
 //Cargamos el catalogo
 const CATALOGO = [
-    new Producto("Intel I3", "Microprocesadores", 100, 1, "../assets/I3.jpg"),
-    new Producto("Intel I5", "Microprocesadores", 150, 2,"../assets/I5.png"),
-    new Producto("Intel I7", "Microprocesadores", 200, 3,"../assets/I7.jpg"),
-    new Producto("Ryzen 3", "Microprocesadores", 80, 4,"../assets/RYZEN3.jpeg"),
-    new Producto("Ryzen 5", "Microprocesadores", 130, 5,"../assets/RYZEN5.jpg"),
-    new Producto("Ryzen 7", "Microprocesadores", 180, 6,"../assets/RYZEN7.jpg"),
-    new Producto("Kingston Fury 16GB", "Memoria", 50, 7,"../assets/FURY16GB.jpg"),
-    new Producto("Kingston Fury 8GB", "Memoria", 30, 8,"../assets/FURY8GB.jpg"),
-    new Producto("Gigabyte Ga H310", "Motherboard", 90, 9,"../assets/MOTHERGIGABYTE.png"),
-    new Producto("Asus A320m-k", "Motherboard", 80, 10,"../assets/MOTHERASUS.jpg"),
-    new Producto("MSI RTX 30 Series 3080ti", "Placa de video", 800, 11,"../assets/GRAFICA.webp"),
+    new Producto("Intel I3", "Microprocesadores", 100, 1, "./assets/I3.jpg"),
+    new Producto("Intel I5", "Microprocesadores", 150, 2,"./assets/I5.png"),
+    new Producto("Intel I7", "Microprocesadores", 200, 3,"./assets/I7.jpg"),
+    new Producto("Ryzen 3", "Microprocesadores", 80, 4,"./assets/RYZEN3.jpeg"),
+    new Producto("Ryzen 5", "Microprocesadores", 130, 5,"./assets/RYZEN5.jpg"),
+    new Producto("Ryzen 7", "Microprocesadores", 180, 6,"./assets/RYZEN7.jpg"),
+    new Producto("Kingston Fury 16GB", "Memoria", 50, 7,"./assets/FURY16GB.jpg"),
+    new Producto("Kingston Fury 8GB", "Memoria", 30, 8,"./assets/FURY8GB.jpg"),
+    new Producto("Gigabyte Ga H310", "Motherboard", 90, 9,"./assets/MOTHERGIGABYTE.png"),
+    new Producto("Asus A320m-k", "Motherboard", 80, 10,"./assets/MOTHERASUS.jpg"),
+    new Producto("MSI RTX 30 Series 3080ti", "Placa de video", 800, 11,"./assets/GRAFICA.webp"),
 ]
 
 const cardsContainer = document.getElementById('cards');
