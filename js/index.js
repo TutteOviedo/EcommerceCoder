@@ -153,7 +153,7 @@ function actualizarYMostrarCarrito() {
     </div>
     `;
 
-    // Utilizar SweetAlert2 para mostrar la factura
+    // Mostrar la factura con SweetAlert
     Swal.fire({
         title: 'Factura de Compra',
         html: facturaCompra,
