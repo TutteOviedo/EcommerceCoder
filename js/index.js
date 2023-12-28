@@ -1,3 +1,61 @@
+function mostrarFormulario() {
+    Swal.fire({
+        title: 'Ingresá tus datos para la factura',
+        html:
+            '<input id="nombre" class="swal2-input" placeholder="Nombre">' +
+            '<input id="apellido" class="swal2-input" placeholder="Apellido">' +
+            '<input id="dni" class="swal2-input" placeholder="DNI">',
+        showCancelButton: true,
+        confirmButtonText: 'Enviar',
+        cancelButtonText: 'Cancelar',
+        focusConfirm: false,
+        preConfirm: () => {
+            const nombre = Swal.getPopup().querySelector('#nombre').value;
+            const apellido = Swal.getPopup().querySelector('#apellido').value;
+            const dni = Swal.getPopup().querySelector('#dni').value;
+
+            if (!nombre || !apellido || !dni) {
+                Swal.showValidationMessage('Por favor, completá todos los campos');
+            }
+
+            return { nombre, apellido, dni };
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const { nombre, apellido, dni } = result.value;
+            localStorage.setItem('nombre', nombre);
+            localStorage.setItem('apellido', apellido);
+            localStorage.setItem('dni', dni);
+
+        }
+    });
+}
+
+window.onload = function () {
+    const nombre = localStorage.getItem('nombre');
+    const apellido = localStorage.getItem('apellido');
+    const dni = localStorage.getItem('dni');
+
+    if (nombre && apellido && dni) {
+        // Verificamos si es o no un nuevo cliente
+        Swal.fire({
+            title: 'Hola de nuevo!',
+            text: `Sos un cliente nuevo o sos \n ${nombre}\n ${apellido}?`,
+            showCancelButton: true,
+            confirmButtonText: 'Soy un nuevo cliente!',
+            cancelButtonText: 'Soy yo!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Si es un nuevo cliente, mostrar el formulario
+                mostrarFormulario();
+            }
+        });
+    } else {
+        mostrarFormulario();
+    }
+};
+
+
 // Definir el objeto PRODUCTOS
 const PRODUCTOS = {
     nombre: "",
@@ -117,9 +175,9 @@ if (localStorage.getItem('carrito')) {
 
 // Función para actualizar y mostrar el carrito
 function actualizarYMostrarCarrito() {
-    let nombre = prompt("Por favor, ingresa tu nombre:");
-    let apellido = prompt("Por favor, ingresa tu apellido:");
-    let documento = prompt("Por favor, ingresa tu número de documento:");
+    const nombre = localStorage.getItem('nombre');
+    const apellido = localStorage.getItem('apellido');
+    const documento = localStorage.getItem('dni');
 
     let facturaCompra = `
     <div style="text-align: left;">
