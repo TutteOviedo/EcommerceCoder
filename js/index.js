@@ -1,3 +1,32 @@
+// URL de la API
+const apiUrl = 'https://dolarapi.com/v1/dolares/oficial';
+
+// Función para obtener el valor del dólar oficial
+async function obtenerDolarOficial() {
+    try {
+
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error(`Error al obtener el valor del dólar oficial. Código de error: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        const valorDolarOficial = data.venta;
+
+        // Agregamos el valor al html
+        const valorDolarOficialElement = document.getElementById('valorDolarOficial');
+        if (valorDolarOficialElement) {
+            valorDolarOficialElement.textContent = `$${valorDolarOficial}`;
+        }
+    } catch (error) {
+        console.error('Error al obtener el valor del dólar oficial:', error.message);
+    }
+}
+
+obtenerDolarOficial();
+
 function mostrarFormulario() {
     Swal.fire({
         title: 'Ingresá tus datos para la factura',
@@ -46,8 +75,10 @@ window.onload = function () {
             cancelButtonText: 'Soy yo!',
         }).then((result) => {
             if (result.isConfirmed) {
-                // Si es un nuevo cliente, mostrar el formulario
+                // Si es un nuevo cliente, mostrar el formulario y limpiamos el carrito
                 mostrarFormulario();
+                carrito = [];
+                localStorage.removeItem('carrito');
             }
         });
     } else {
