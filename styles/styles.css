@@ -78,16 +78,16 @@ header{
   }
 
   #valorDolarOficialContainer {
-    background-color: #f5f5f5; /* Color de fondo */
-    border: 1px solid #ddd; /* Borde */
-    border-radius: 5px; /* Esquinas redondeadas */
-    padding: 10px; /* Espaciado interno */
-    margin: 0 auto; /* Centrado horizontal */
-    display: inline-block; /* Para que ocupe solo el espacio necesario */
+    background-color: #f5f5f5; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 10px; 
+    margin: 0 auto; 
+    display: inline-block; 
     font-weight: bold;
 }
 
 #valorDolarOficial {
-    font-weight: bold; /* Texto en negrita */
-    color: #4CAF50; /* Color del texto */
+    font-weight: bold; 
+    color: #4CAF50; 
 }
