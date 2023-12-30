@@ -34,9 +34,10 @@ function mostrarFormulario() {
             '<input id="nombre" class="swal2-input" placeholder="Nombre">' +
             '<input id="apellido" class="swal2-input" placeholder="Apellido">' +
             '<input id="dni" class="swal2-input" placeholder="DNI">',
-        showCancelButton: true,
+        showCancelButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
         confirmButtonText: 'Enviar',
-        cancelButtonText: 'Cancelar',
         focusConfirm: false,
         preConfirm: () => {
             const nombre = Swal.getPopup().querySelector('#nombre').value;
